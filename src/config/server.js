@@ -10,9 +10,7 @@ const Server = (http, middlewares, routes) => {
     };
     const initializeApplicationRouter = (routes) => {
         app.use(routes);
-        app.use((err, req, res, next) => {
-            handleError(err, res);
-        });
+        app.use(handleError);
     };
 
     initializeMiddlewares(middlewares);

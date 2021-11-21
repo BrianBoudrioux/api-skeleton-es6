@@ -12,6 +12,6 @@ const associateAll = async (models) => {
     Object.values(models).map((model) => model.associate(models));
 };
 
-const db = { sequelize, Sequelize, associateAll };
+const db = { sequelize, associateAll };
 
 export default db;
