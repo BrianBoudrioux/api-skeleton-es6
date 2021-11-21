@@ -7,6 +7,8 @@ class User extends Model {
             {
                 email: DataTypes.STRING,
                 password: DataTypes.STRING,
+                access_token: DataTypes.TEXT,
+                refresh_token: DataTypes.TEXT
             },
             { sequelize, modelName: 'User' }
         );
