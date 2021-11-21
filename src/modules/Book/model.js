@@ -1,4 +1,4 @@
-import {Model, DataTypes} from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
 import db from '../../config/database';
 
 class Book extends Model {
@@ -6,16 +6,18 @@ class Book extends Model {
         return super.init(
             {
                 title: DataTypes.STRING,
-                content: DataTypes.TEXT
-            }, {sequelize, modelName: 'Book'}
+                content: DataTypes.TEXT,
+            },
+            { sequelize, modelName: 'Book' }
         );
     }
+
     static associate(models) {
         // define association here
-        this.belongsTo(models.User)
+        this.belongsTo(models.User);
         return this;
     }
-};
+}
 
 Book.init(db.sequelize);
 

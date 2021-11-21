@@ -1,4 +1,4 @@
-import { logger } from "../config/middlewares";
+import { logger } from '../config/middlewares';
 
 class ApiError extends Error {
     constructor(statusCode, message) {
@@ -8,14 +8,14 @@ class ApiError extends Error {
 }
 
 const handleError = (err, res) => {
-    const {message} = err;
-    const statusCode = (err.statusCode) ? err.statusCode : 500;
+    const { message } = err;
+    const statusCode = err.statusCode ? err.statusCode : 500;
 
     logger.log(statusCode, err);
     res.status(statusCode).json({
         statusCode,
-        message
+        message,
     });
-}
+};
 
-export {ApiError, handleError};
+export { ApiError, handleError };

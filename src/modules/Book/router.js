@@ -1,10 +1,11 @@
-import { Router } from "express";
-import bookController from "./controller";
+import { Router } from 'express';
+import bookController from './controller';
 
 const entrypoint = '/books';
 const bookRouter = Router();
 
-bookRouter.route(entrypoint)
+bookRouter
+    .route(entrypoint)
     .get(bookController.getAll)
     .post(bookController.add);
 

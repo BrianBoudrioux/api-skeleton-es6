@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon --exec babel-node app.js",
+    "lintfix": "eslint src --fix --cache",
     "test": "jest",
     "test:dev": "jest --watchAll"
   },
@@ -16,6 +17,11 @@
     "cookie-parser": "^1.4.5",
     "csurf": "^1.11.0",
     "dotenv": "^8.2.0",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
     "express": "^4.17.1",
     "glob": "^7.1.6",
     "jsonwebtoken": "^8.5.1",
@@ -23,7 +29,8 @@
     "mysql2": "^2.2.5",
     "nodemailer": "^6.4.18",
     "path": "^0.12.7",
-    "sequelize": "^6.6.2",
+    "prettier": "^2.4.1",
+    "sequelize": "^6.11.0",
     "winston": "^3.3.3"
   },
   "devDependencies": {

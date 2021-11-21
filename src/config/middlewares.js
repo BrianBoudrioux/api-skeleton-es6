@@ -10,8 +10,8 @@ const middlewares = {
     cookie: cookieParser(),
     apiLogger: morgan('combined', { stream: logger.stream }),
     urlencoded: express.urlencoded({ extended: false }),
-    json: express.json()
+    json: express.json(),
 };
 
 export default middlewares;
-export {logger};
+export { logger };
