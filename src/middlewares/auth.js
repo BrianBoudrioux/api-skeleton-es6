@@ -7,7 +7,7 @@ const isAuth = async (req, res, next) => {
         let access_token = req.headers.authorization.split(' ')[1];
         const refresh_token = req.cookies['refresh_token'];
 
-        if (!access_token || !refresh_token)
+        if (!refresh_token)
             return res.status(401).json('Access denied. Your session expired');
 
         let user = await User.findOne({ where: { access_token, refresh_token } });
