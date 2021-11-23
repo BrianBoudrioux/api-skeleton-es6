@@ -10,7 +10,9 @@ class User extends Model {
                 access_token: DataTypes.TEXT,
                 refresh_token: DataTypes.TEXT
             },
-            { sequelize, modelName: 'User' }
+            {
+                sequelize, modelName: 'User'
+            }
         );
     }
 
@@ -21,6 +23,21 @@ class User extends Model {
     }
 }
 
+
 User.init(db.sequelize);
+
+const exclude = [
+    'access_token', 'refresh_token', 'updatedAt', 'createdAt', 'password'
+]
+
+User.beforeFind(async (user) => {
+    user.attributes = { exclude };
+});
+
+User.beforeUpdate(async (user) => {
+    user.attributes = { exclude };
+});
+
+
 
 export default User;

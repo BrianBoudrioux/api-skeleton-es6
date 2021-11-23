@@ -37,8 +37,7 @@ const userController = {
             await user.save();
 
             res.cookie('refresh_token', user.refresh_token, { expiresIn: '60d', httpOnly: true });
-
-            res.status(200).json(user);
+            res.status(200).json({token: user.access_token});
         } catch (err) {
             next(err);
         }
